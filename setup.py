@@ -5,7 +5,7 @@ from setuptools import setup, find_packages
 
 version = re.search(
     r"__version__ = ['\"](.*)['\"]",
-    open("accordion/__init__.py").read()
+    open("aldryn_accordion/__init__.py").read()
 ).group(1)
 
 

@@ -1,3 +1,3 @@
 include README.rst
 include CHANGELOG
-recursive-include accordion/templates *
+recursive-include aldryn_accordion/templates *
