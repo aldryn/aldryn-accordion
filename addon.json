@@ -1,0 +1,15 @@
+{
+	"name": "Accordion",
+	"description": "Allows",
+	"version": "0.0.1",
+	"url": "https://github.com/aldryn/aldryn-accordion",
+	"package-name": "aldryn-accordion",
+	"installed-apps": [],
+	"author": {
+		"name": "Divio AG",
+		"url": "https://www.divio.ch"
+	},
+	"license": {
+		"name": "BSD",
+	}
+}

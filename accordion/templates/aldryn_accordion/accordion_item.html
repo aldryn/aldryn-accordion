@@ -1,0 +1,13 @@
+{% load cms_tags i18n %}
+
+<div class="accordion-trigger">
+	{{ item.title }} <span class="text">{% trans "Close" %}</span>
+</div>
+
+<div class="accordion-container">
+	<div class="accordion-item {% if item.custom_classes %} {{ item.custom_classes }}{% endif %}{% if parentloop.first %} alpha{% endif %}{% if parentloop.last %} omega{% endif %}">
+		{% for plugin in item.child_plugin_instances %}
+			{% render_plugin plugin %}
+		{% endfor %}
+	</div>
+</div>
