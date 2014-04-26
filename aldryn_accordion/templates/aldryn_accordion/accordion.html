@@ -6,12 +6,13 @@
 	{% endfor %}
 </div>
 
-{% addtoblock "js" %}<script src="{% static "js/plugins/cl.accordion.min.js" %}"></script>{% endaddtoblock %}
+{# DON'T FORGET to load "cl.accordion.min.js" #}
+
 {% addtoblock "js" %}
 <script>
 jQuery(document).ready(function ($) {
 	{% comment %}
-	"index" and "grouping" are profided in "accordion_json_options"
+	"index" and "grouping" are defined in "accordion_json_options"
 	   - "index": setting for setting the initial opened accordion, null for none
 	   - "grouping": defines if only one can be opened at a time or every entry can be opened individually
 	{% endcomment %}
