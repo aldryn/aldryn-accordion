@@ -1,4 +1,0 @@
-2014-04-26 	Jakub Janoszek <jakub.janoszek@divio.ch>
-
-	* Initial package setup: package it self, manifest, readme and
-	"addon.json" files added

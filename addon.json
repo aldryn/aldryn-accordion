@@ -1,15 +1,17 @@
 {
 	"name": "Accordion",
-	"description": "Allows",
-	"version": "0.0.1",
+	"description": "Adds accordion plugin",
+	"version": "0.1.0",
 	"url": "https://github.com/aldryn/aldryn-accordion",
 	"package-name": "aldryn-accordion",
-	"installed-apps": [],
+	"installed-apps": [
+		"aldryn_accordion"
+	],
 	"author": {
 		"name": "Divio AG",
 		"url": "https://www.divio.ch"
 	},
 	"license": {
-		"name": "BSD",
+		"name": "BSD"
 	}
 }

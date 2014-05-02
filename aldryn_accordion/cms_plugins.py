@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -*-
-import json
-
 from django.utils.translation import ugettext_lazy as _
 
 from cms.plugin_pool import plugin_pool
@@ -37,11 +35,7 @@ class AccordionPlugin(CMSPluginBase):
         context.update({
             'accordion': instance,
             'accordion_id': "plugin-accordion-%s" % instance.pk,
-            'placeholder': placeholder,
-            'accordion_json_options': json.dumps({
-                'index': instance.index,
-                'grouping': instance.grouping,
-            }),
+            'placeholder': placeholder
         })
         return context
 

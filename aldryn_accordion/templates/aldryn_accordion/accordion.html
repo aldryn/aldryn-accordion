@@ -1,37 +1,31 @@
-{% load i18n static sekizai_tags cms_tags %}
+{% load i18n static cms_tags sekizai_tags %}
 
-<div class="plugin plugin-accordion {% if accordion.custom_classes %} {{ accordion.custom_classes }} {% endif %}" id="{{ accordion_id }}">
-	{% for plugin in accordion.child_plugin_instances %}
-		{% with parentloop=forloop %}{% render_plugin plugin %}{% endwith %}
-	{% endfor %}
+<div class="plugin plugin-accordion{% if accordion.custom_classes %} {{ accordion.custom_classes }}{% endif %}" id="{{ accordion_id }}">
+    {% for plugin in accordion.child_plugin_instances %}
+        {% with parentloop=forloop %}{% render_plugin plugin %}{% endwith %}
+    {% endfor %}
 </div>
 
-{# DON'T FORGET to load "cl.accordion.min.js" #}
-
+{% addtoblock "js" %}<script src="{% static 'js/libs/class.min.js' %}"></script>{% endaddtoblock %}
+{% addtoblock "js" %}<script src="{% static 'js/addons/cl.accordion.min.js' %}"></script>{% endaddtoblock %}
 {% addtoblock "js" %}
 <script>
 jQuery(document).ready(function ($) {
-	{% comment %}
-	"index" and "grouping" are defined in "accordion_json_options"
-	   - "index": setting for setting the initial opened accordion, null for none
-	   - "grouping": defines if only one can be opened at a time or every entry can be opened individually
-	{% endcomment %}
-	var options = $.extend({
-		// settings
-		'index': null,
-		'grouping': true,
-		// leave this static
-		'forceClose': true,
-		'cls': {
-			'trigger': '.accordion-trigger',
-			'container': '.accordion-container'
-		},
-		'lang': {
-			'expanded': '{% trans "Close" %} ',
-			'collapsed': '{% trans "Open" %} '
-		}
-	}, {{ accordion_json_options|safe }});
-	new Cl.Accordion("#{{ accordion_id }}", options);
+    new Cl.Accordion("#{{ accordion_id }}", {
+        // settings
+        'index': {{ accordion.index|default:"null" }},
+        'grouping': {% if accordion.grouping %}true{% else %}false{% endif %},
+        // static
+        'forceClose': true,
+        'cls': {
+            'trigger': '.accordion-trigger',
+            'container': '.accordion-container'
+        },
+        'lang': {
+            'expanded': '{% trans "Close" %} ',
+            'collapsed': '{% trans "Open" %} '
+        }
+    });
 });
 </script>
 {% endaddtoblock %}
