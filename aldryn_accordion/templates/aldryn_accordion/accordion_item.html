@@ -1,13 +1,26 @@
 {% load cms_tags i18n %}
 
-<div class="accordion-trigger">
-    {{ item.title }} <span class="text">{% trans "Close" %}</span>
-</div>
+<div class="panel panel-default{% if item.custom_classes %} {{ item.custom_classes }}{% endif %}">
+    <div class="panel-heading" role="tab" id="aldryn-accordion-heading-{{ accordion.id }}-{{ forloop.counter }}">
+        <h4 class="panel-title">
+            <a href="#aldryn-accordion-trigger-{{ accordion.id }}-{{ forloop.counter }}"{% if index == forloop.counter0 %} class="collapsed"{% endif %}
+                data-toggle="collapse"
+                data-parent="#aldryn-accordion-{{ accordion.id }}"
+                aria-expanded="{% if index == forloop.counter0 %}true{% else %}false{% endif %}"
+                aria-controls="aldryn-accordion-trigger-{{ accordion.id }}-{{ forloop.counter }}">
+                {{ item.title }}
+            </a>
+        </h4>
+    </div>
 
-<div class="accordion-container">
-    <div class="accordion-item {% if item.custom_classes %} {{ item.custom_classes }}{% endif %}{% if parentloop.first %} alpha{% endif %}{% if parentloop.last %} omega{% endif %}">
-        {% for plugin in item.child_plugin_instances %}
-            {% render_plugin plugin %}
-        {% endfor %}
+    <div id="aldryn-accordion-trigger-{{ accordion.id }}-{{ forloop.counter }}"
+        class="panel-collapse collapse{% if index == forloop.counter0 %} in{% endif %}"
+        role="tabpanel"
+        aria-labelledby="aldryn-accordion-heading-{{ accordion.id }}-{{ forloop.counter }}">
+        <div class="panel-body">
+            {% for plugin in item.child_plugin_instances %}
+                {% render_plugin plugin %}
+            {% endfor %}
+        </div>
     </div>
 </div>
