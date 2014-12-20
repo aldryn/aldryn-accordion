@@ -18,7 +18,7 @@ Redeploy the site.
 Manuall Installation
 --------------------
 
-Run ``pip install aldryn-accordion``.
+Run ``pip install -e git+git://github.com/aldryn/aldryn-accordion.git#egg=aldryn_accordion``.
 
 Add below apps to ``INSTALLED_APPS``: ::
 
