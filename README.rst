@@ -18,13 +18,17 @@ Redeploy the site.
 Manuall Installation
 --------------------
 
-Run ``pip install aldryn-accordion``.
+::
 
-Add below apps to ``INSTALLED_APPS``: ::
+    pip install aldryn-accordion
 
-    INSTALLED_APPS = [
-        …
+Add ``aldryn_accordion`` to ``INSTALLED_APPS``.
 
-        'aldryn_accordion',
-        …
-    ]
+Configure ``aldryn-boilerplates`` (https://pypi.python.org/pypi/aldryn-boilerplates/).
+
+To use the old templates, set ``ALDRYN_BOILERPLATE_NAME='legacy'``.
+To use https://github.com/aldryn/aldryn-boilerplate-standard (recommended, will be renamed to
+``aldryn-boilerplate-bootstrap3``) set ``ALDRYN_BOILERPLATE_NAME='bootstrap3'``.
+
+When using the ``legacy`` boilerplate, **jQuery** and
+`classjs <https://github.com/finalangel/classjs-plugins>`_ cl.accordion are required.

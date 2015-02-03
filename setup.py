@@ -9,7 +9,9 @@ version = re.search(
 ).group(1)
 
 
-REQUIREMENTS = []
+REQUIREMENTS = [
+    'aldryn-boilerplates>=0.6',
+]
 
 
 CLASSIFIERS = [
