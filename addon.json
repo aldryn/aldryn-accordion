@@ -1,16 +1,16 @@
 {
-	"name": "Accordion",
-	"description": "Adds accordion plugin",
-	"url": "https://github.com/aldryn/aldryn-accordion",
-	"package-name": "aldryn-accordion",
-	"installed-apps": [
-		"aldryn_accordion"
-	],
-	"author": {
-		"name": "Divio AG",
-		"url": "https://www.divio.ch"
-	},
-	"license": {
-		"name": "BSD"
-	}
+    "name": "Accordion",
+    "description": "Adds accordion plugin",
+    "url": "https://github.com/aldryn/aldryn-accordion",
+    "package-name": "aldryn-accordion",
+    "installed-apps": [
+        "aldryn_accordion"
+    ],
+    "author": {
+        "name": "Divio AG",
+        "url": "https://www.divio.ch"
+    },
+    "license": {
+        "name": "BSD"
+    }
 }
