@@ -20,7 +20,7 @@ Manuall Installation
 
 ::
 
-    ``pip install -e git+git://github.com/aldryn/aldryn-accordion.git#egg=aldryn_accordion``
+    pip install -e git+git://github.com/aldryn/aldryn-accordion.git#egg=aldryn_accordion
 
 Add ``aldryn_accordion`` to ``INSTALLED_APPS``.
 
